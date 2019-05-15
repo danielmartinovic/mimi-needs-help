@@ -1,21 +1,8 @@
-var warm = ["#f609d3", "#f60954", "#f9924e", "#f9cd5d", "#c55df9"];
-var cool = ["#7ffadc", "#7fb7fa", "#58f96a", "#abf958", "#7358f9"];
-var col;
-
-function random(){
-	var r = Math.floor(Math.random() * 5 ) + 1;
-	return r
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
-
-function warmClock() {
-	var col = warm[random()];
-	return Clock(col);
-}
-
-function coolClock(){
-	var col = cool[random()];
-	return Clock(col);
-}
+var randomColor = random_rgba();
 
 function setUpCanvas(w, h) {
   // get canvas element from html page using the unique id we gave it (#)
@@ -56,6 +43,7 @@ class ball {
         ctx.beginPath();
         ctx.arc(this.x_val, this.y_val, this.radius, 0, 2 * Math.PI);
         ctx.stroke();
+	ctx.strokeStyle = randomColor;
     }
 }
 
