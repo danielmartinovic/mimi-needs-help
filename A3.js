@@ -46,4 +46,4 @@ function etriangle(x,y,s){
     ctx.stroke();
 }
 
-setUpCanvas()
+setUpCanvas();
