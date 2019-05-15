@@ -1,14 +1,8 @@
-function getRandomRgb() {
-	for (var i = 0; i <3; i++){
-		var x = Math.floor(Math.random() * 255) + 1;
- 		num[i] = x;
-	}
-	var r = num[0];
- 	var g = num[1];
-  	var b = num[2];
-
-  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
+var randomColor = random_rgba();
 
 function setUpCanvas(w, h) {
   // get canvas element from html page using the unique id we gave it (#)
@@ -49,6 +43,8 @@ class ball {
         ctx.beginPath();
         ctx.arc(this.x_val, this.y_val, this.radius, 0, 2 * Math.PI);
         ctx.stroke();
+	ctx.strokeStyle = randomColor;
+	ctx.strokeStyle = randomColor;
     }
 }
 
