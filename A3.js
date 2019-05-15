@@ -49,10 +49,15 @@ class ball {
 
 function bounce() {
     var t = new Date()/10;
-    x = t%200
     ctx.save();
     ctx.clearRect(0, 0, 800, 800);
-    new ball(t%800,(t%200 === t%400) ? (1/100) * Math.pow(x, 2) + 400 : (1/100) * Math.pow(x-200, 2) + 400,15).draw()
+
+    for (var i = 1; i <= 5; i++) {
+        var t_delay = t + i * Math.pow(25,1/2)
+        new ball(t_delay%800,(t_delay%200 === t_delay%400) ? (1/100) * Math.pow(t_delay%200, 2) + 400 : (1/100) * Math.pow(t_delay%200-200, 2) + 400, 5*i).draw()
+
+    }
+
     requestAnimationFrame(bounce)
 }
 setUpCanvas(800, 800)
