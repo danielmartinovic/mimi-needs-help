@@ -63,9 +63,10 @@ function bounce() {
     for (var i = 1; i <= 5; i++) {
         var t_delay = t + i * 5
 
-        var bounce_state = (1/100) * Math.pow(t_delay%400 -200, 2) + 400
+        var projectile_x = (t_delay-200)%800
+        var projectile_y = (1/100) * Math.pow(t_delay%400 -200, 2) + 400
 
-        var my_ball = new ball((t_delay-200)%800, bounce_state, 5*i, cp)
+        var my_ball = new ball(projectile_x, projectile_y, 5*i, cp)
         my_ball.draw()
 
     }
