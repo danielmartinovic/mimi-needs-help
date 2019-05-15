@@ -1,6 +1,20 @@
-function random(m){
-	var r = Math.random()*m;
+var warm = ["#f609d3", "#f60954", "#f9924e", "#f9cd5d", "#c55df9"];
+var cool = ["#7ffadc", "#7fb7fa", "#58f96a", "#abf958", "#7358f9"];
+var col;
+
+function random(){
+	var r = Math.floor(Math.random() * 5 ) + 1;
 	return r
+}
+
+function warmClock() {
+	var col = warm[random()];
+	return Clock(col);
+}
+
+function coolClock(){
+	var col = cool[random()];
+	return Clock(col);
 }
 
 function setUpCanvas(w, h) {
