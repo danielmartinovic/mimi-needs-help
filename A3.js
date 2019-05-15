@@ -1,20 +1,13 @@
-var warm = ["#f609d3", "#f60954", "#f9924e", "#f9cd5d", "#c55df9"];
-var cool = ["#7ffadc", "#7fb7fa", "#58f96a", "#abf958", "#7358f9"];
-var col;
+function getRandomRgb() {
+	for (var i = 0; i <3; i++){
+		var x = Math.floor(Math.random() * 255) + 1;
+ 		num[i] = x;
+	}
+	var r = num[0];
+ 	var g = num[1];
+  	var b = num[2];
 
-function random(){
-	var r = Math.floor(Math.random() * 5 ) + 1;
-	return r
-}
-
-function warmClock() {
-	var col = warm[random()];
-	return Clock(col);
-}
-
-function coolClock(){
-	var col = cool[random()];
-	return Clock(col);
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 }
 
 function setUpCanvas(w, h) {
