@@ -21,4 +21,29 @@ function draw() {
 
 }
 
+function square(x, y, s){
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+    ctx.lineTo(x + s, y);
+    ctx.lineTo(x + s, y + s);
+    ctx.lineTo(x, y + s);
+    ctx.lineTo(x,y);
+    ctx.stroke();
+}
+
+function circle(x, y, r, s){
+    ctx.beginPath();
+    ctx.arc(x, y, r, s, 2 * Math.PI);
+    ctx.stroke();
+}
+
+function etriangle(x,y,s){
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+    ctx.lineTo(x + s/2, y + s * Math.sqrt(3)/2);
+    ctx.lineTo(x - s/2, y + s * Math.sqrt(3)/2);
+    ctx.lineTo(x,y);
+    ctx.stroke();
+}
+
 setUpCanvas()
