@@ -3,7 +3,7 @@ function random(m){
 	return r
 }
 
-function setUpCanvas() {
+function setUpCanvas(w,h) {
   // get canvas element from html page using the unique id we gave it (#)
 	canvas = document.querySelector("#myCanvas");
 	// change the size of the canvas
@@ -17,10 +17,6 @@ function setUpCanvas() {
     window.requestAnimationFrame(draw);
 }
 
-function draw() {
-
-}
-
 function square(x, y, s){
     ctx.beginPath();
     ctx.moveTo(x,y);
@@ -31,9 +27,9 @@ function square(x, y, s){
     ctx.stroke();
 }
 
-function circle(x, y, r, s){
+function circle(x, y, r) {
     ctx.beginPath();
-    ctx.arc(x, y, r, s, 2 * Math.PI);
+    ctx.arc(x, y, r, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
@@ -46,4 +42,14 @@ function etriangle(x,y,s){
     ctx.stroke();
 }
 
-setUpCanvas();
+
+
+
+function draw() {
+    circle(100,100,50, 80)
+}
+
+w = 800
+h=800
+
+setUpCanvas(w,h)
