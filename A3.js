@@ -44,7 +44,6 @@ class ball {
         ctx.arc(this.x_val, this.y_val, this.radius, 0, 2 * Math.PI);
         ctx.stroke();
 	ctx.strokeStyle = randomColor;
-	ctx.strokeStyle = randomColor;
     }
 }
 
