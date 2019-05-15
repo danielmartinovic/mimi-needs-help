@@ -28,7 +28,6 @@ function setUpCanvas(w, h) {
 	canvas.style.border = "1px dotted brown";
 	// get the canvas drawing context
 	ctx = canvas.getContext("2d");
-    window.requestAnimationFrame(draw);
 }
 
 function square(x, y, s){
@@ -47,24 +46,25 @@ function circle(x, y, r) {
     ctx.stroke();
 }
 
-function etriangle(x,y,s){
-    ctx.beginPath();
-    ctx.moveTo(x,y);
-    ctx.lineTo(x + s/2, y + s * Math.sqrt(3)/2);
-    ctx.lineTo(x - s/2, y + s * Math.sqrt(3)/2);
-    ctx.lineTo(x,y);
-    ctx.stroke();
+class ball {
+    constructor(x_val = 0,y_val = 0,radius = 10) {
+        this.x_val = x_val
+        this.y_val = y_val
+        this.radius = radius
+    }
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x_val, this.y_val, this.radius, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
 }
 
 function bounce() {
-    var t = new Date();
-    var ctx = document.getElementById('myCanvas').getContext('2d');
+    var t = new Date()/10;
     ctx.save();
     ctx.clearRect(0, 0, 800, 800);
-    circle(t%800,t%800,15)
+    new ball(t%800,(t%200===t%400) ? t%400 + 400 : 800 - t%400,15).draw()
     requestAnimationFrame(bounce)
 }
-
-window.requestAnimationFrame(bounce);
-
-setUpCanvas(800,800)
+setUpCanvas(800, 800)
+window.requestAnimationFrame(bounce)
