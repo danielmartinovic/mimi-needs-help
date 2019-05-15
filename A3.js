@@ -3,7 +3,7 @@ function random(m){
 	return r
 }
 
-function setUpCanvas(w,h) {
+function setUpCanvas(w, h) {
   // get canvas element from html page using the unique id we gave it (#)
 	canvas = document.querySelector("#myCanvas");
 	// change the size of the canvas
@@ -14,7 +14,7 @@ function setUpCanvas(w,h) {
 	canvas.style.border = "1px dotted brown";
 	// get the canvas drawing context
 	ctx = canvas.getContext("2d");
-    window.requestAnimationFrame(draw);
+    window.requestAnimationFrame(draw());
 }
 
 function square(x, y, s){
@@ -46,10 +46,9 @@ function etriangle(x,y,s){
 
 
 function draw() {
-    circle(100,100,50, 80)
+    var t = new Date()
+    circle(.1*t.getTime()%800, .1*t.getTime()%800, 25)
+    window.requestAnimationFrame(draw);
 }
 
-w = 800
-h=800
-
-setUpCanvas(w,h)
+setUpCanvas(800,800)
