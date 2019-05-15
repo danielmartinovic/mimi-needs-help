@@ -76,5 +76,5 @@ function bounce() {
 setUpCanvas(800, 800)
 var cp = '#000'
 
-window.requestAnimationFrame(bounce)
+requestAnimationFrame(bounce)
 
