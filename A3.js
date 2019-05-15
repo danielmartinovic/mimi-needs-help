@@ -50,7 +50,7 @@ class ball {
 }
 
 function bounce() {
-    var t = Math.floor (new Date()/10)
+    var t = Math.floor (new Date().getTime()/10)
     console.log(t%400)
     if(t%400 <= 390 && t%400 >= 389) {
         cp = colorPicker()
