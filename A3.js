@@ -51,6 +51,7 @@ class ball {
 
 function bounce() {
     var t = Math.floor (new Date().getTime()/10)
+
     console.log(t%400)
     if(t%400 <= 390 && t%400 >= 389) {
         cp = colorPicker()
@@ -60,7 +61,7 @@ function bounce() {
     ctx.clearRect(0, 0, 800, 800);
 
     for (var i = 1; i <= 5; i++) {
-        var t_delay = t + i * Math.pow(25,1/2)
+        var t_delay = t + i * 5
 
         var bounce_state = (1/100) * Math.pow(t_delay%400 -200, 2) + 400
 
