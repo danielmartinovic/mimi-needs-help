@@ -1,8 +1,10 @@
-function random_rgba() {
-    var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+var colors = ["#e51414", "#f9a82d", "#fdef69", "#78f048", "#0954f2", "#abf958", "#816dfd"];
+var randomColor = colorPicker();
+
+function colorPicker(){
+	var r = Math.floor(Math.random() * 7 ) + 1;
+	return colors[r];
 }
-var randomColor = random_rgba();
 
 function setUpCanvas(w, h) {
   // get canvas element from html page using the unique id we gave it (#)
@@ -43,7 +45,7 @@ class ball {
         ctx.beginPath();
         ctx.arc(this.x_val, this.y_val, this.radius, 0, 2 * Math.PI);
         ctx.stroke();
-	ctx.strokeStyle = randomColor;
+	      ctx.strokeStyle = randomColor;
     }
 }
 
@@ -71,3 +73,4 @@ function bounce() {
 }
 setUpCanvas(800, 800)
 window.requestAnimationFrame(bounce)
+
