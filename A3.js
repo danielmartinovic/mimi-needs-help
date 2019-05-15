@@ -14,4 +14,11 @@ function setUpCanvas() {
 	canvas.style.border = "1px dotted brown";
 	// get the canvas drawing context
 	ctx = canvas.getContext("2d");
+    window.requestAnimationFrame(draw);
 }
+
+function draw() {
+    canvas
+}
+
+setUpCanvas()
