@@ -18,7 +18,7 @@ function setUpCanvas() {
 }
 
 function draw() {
-    canvas
+
 }
 
 setUpCanvas()
