@@ -61,9 +61,10 @@ class ball {
 
 function bounce() {
     var t = new Date()/10;
+    x = t%200
     ctx.save();
     ctx.clearRect(0, 0, 800, 800);
-    new ball(t%800,(t%200===t%400) ? t%400 + 400 : 800 - t%400,15).draw()
+    new ball(t%800,(t%200 === t%400) ? (1/100) * Math.pow(x, 2) + 400 : (1/100) * Math.pow(x-200, 2) + 400,15).draw()
     requestAnimationFrame(bounce)
 }
 setUpCanvas(800, 800)
