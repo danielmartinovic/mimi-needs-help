@@ -36,7 +36,7 @@ function bounce() {
         var delay = t + i * 5;
 
         var xProjectile = (delay-200)%800;
-        var yProjectile = (1/100) * Math.pow(delay%400 -200, 2) + 400;
+        var yProjectile = (1/100) * Math.pow(delay%400 -200, 2) + 400; 
 
         var myBall = new Ball(xProjectile, yProjectile, 5*i, cp);
         myBall.draw();
